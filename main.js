@@ -122,7 +122,56 @@ const duckBuilder = (duckNames) => {
     printToDom('ducksPage', domString);
 };
 
+const choseColor = (e) => {
+    console.log('white');
+    const buttonId = e.target.id;
+    const selectedDucks = [];
+    for(let i = 0; i < ducks.length; i++){
+        if(ducks[i].color === buttonId){
+            selectedDucks.push(ducks[i]);
+        };
+    }
+    duckBuilder(selectedDucks);
+};
+
+
+
+const choseGender = (e) => {
+    console.log('male');
+    const buttonId = e.target.id;
+    const selectedDucks = [];
+    for(let i = 0; i < ducks.length; i++){
+        if(ducks[i].gender === buttonId){
+            selectedDucks.push(ducks[i]);
+        };
+    }
+    duckBuilder(selectedDucks);
+};
+
+
+const choseRubber = () => {
+    console.log('rubber');
+    const selectedDucks = [];
+    for(let i = 0; i < ducks.length; i++){
+        if(ducks[i].isRubber){
+            selectedDucks.push(ducks[i]);
+        }
+    }
+    duckBuilder(selectedDucks);
+};
+
+
+const events = () => {
+    document.getElementById('white').addEventListener('click', choseColor);
+    document.getElementById('yellow').addEventListener('click', choseColor);
+    document.getElementById('blue').addEventListener('click', choseColor);
+    document.getElementById('male').addEventListener('click', choseGender);
+    document.getElementById('female').addEventListener('click', choseGender);
+    document.getElementById('rubber').addEventListener('click', choseRubber);
+};
+
 const init = () => {
     duckBuilder(ducks);
+    events();
 }
 init();

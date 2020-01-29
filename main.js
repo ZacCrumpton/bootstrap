@@ -1,5 +1,10 @@
 console.log("HelloWorld!")
 
+const printToDom = (divId, textToPrint) => {
+    const selectedDiv = document.getElementById(divId);
+    selectedDiv.innerHTML = textToPrint
+};
+
 const ducks = [
     {
         color: 'blue',
@@ -98,5 +103,16 @@ const ducks = [
         imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/81xvjWM2jSL._SY355_.jpg'
     }
 ];
+//good test to make sure loop is working 
+const duckBuilder = (duckNames) => {
+    let domString = '';
+    for(let i = 0; i < duckNames.length; i++){
+        domString += `<h2>This ducks name is ${duckNames[i].name}</h2>`
+    }
+    printToDom('ducksPage', domString);
+};
 
-console.log(ducks)
+const init = () => {
+    duckBuilder(ducks);
+}
+init();

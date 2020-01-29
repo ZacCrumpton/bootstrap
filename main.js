@@ -107,7 +107,17 @@ const ducks = [
 const duckBuilder = (duckNames) => {
     let domString = '';
     for(let i = 0; i < duckNames.length; i++){
-        domString += `<h2>This ducks name is ${duckNames[i].name}</h2>`
+    domString += '<div class="col-md-6 col-lg-4">'
+    domString +=    '<div class="card">';
+    domString +=  `<img src="${duckNames[i].imgUrl}" class="card-img-top" alt="...">`;
+    domString +=  '<div class="card-body">';
+    domString +=    `<h5 class="card-title">${duckNames[i].name}</h5>`;
+    domString +=    `<p class="card-text">${duckNames[i].socialStatus}</p>`
+    domString +=    `<p class="card-text">${duckNames[i].diet}</p>`
+    domString +=    '<p class="card-text"> </p>';
+    domString += '</div>';
+    domString += '</div>';
+    domString += '</div>'
     }
     printToDom('ducksPage', domString);
 };

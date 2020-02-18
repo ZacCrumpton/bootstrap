@@ -162,7 +162,6 @@ const choseRubber = () => {
 
 
 const events = () => {
-    document.getElementById('white').addEventListener('click', choseColor);
     document.getElementById('yellow').addEventListener('click', choseColor);
     document.getElementById('blue').addEventListener('click', choseColor);
     document.getElementById('male').addEventListener('click', choseGender);
